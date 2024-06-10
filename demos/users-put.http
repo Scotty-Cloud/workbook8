@@ -1,15 +1,15 @@
-POST http://localhost:3000/users/
+PUT http://localhost:3000/users/12
 Content-Type: application/json
 
 {
-  "name": "scotty",
-  "username": "godzilla",
-  "email": "zilla@gmail.com",
+  "name": "scott",
+  "username": "zilla",
+  "email": "godzilla@gmail.com",
   "address": {
-    "street": "Bourbon Street",
+    "street": "Sleep Street",
     "suite": "Suite 420",
     "city": "Queens",
-    "zipcode": "10002",
+    "zipcode": "11377",
     "geo": {
       "lat": "-31.8129",
       "lng": "62.5342"
