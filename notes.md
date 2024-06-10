@@ -29,3 +29,10 @@
 - you need a JSON object in the body
 - the JSON object should not have an id property (it is generated on the server by the API)
 - JSON objects can not have a trailing comma after the last property
+
+## DELETE
+- make sure the HTTP Method is DELETE
+- URL should come after the HTTP Method
+- you need to put an id at the end
+- no headers needed
+- no body needed
