@@ -1,0 +1,8 @@
+PUT http://localhost:3000/todos/45
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "title": "eat lunch",
+  "completed": true
+}
