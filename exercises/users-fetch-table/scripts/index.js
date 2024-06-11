@@ -37,7 +37,7 @@ async function fetchAndDisplayUserData() {
 
     let data = await response.json();
     let tableBody = document.querySelector("#user-data");
-    tableBody.innerText = "";
+    tableBody.innerHTML = ""; // Use innerHTML instead of innerText
     for (let user of data) {
       let row = tableBody.insertRow();
 
@@ -52,6 +52,12 @@ async function fetchAndDisplayUserData() {
 
       let companyCell = row.insertCell();
       companyCell.textContent = user.company.name;
+
+      let actionsCell = row.insertCell();
+      actionsCell.innerText = `
+        <a href="edit.html?id=${user.id}">Edit</a>
+        <a href="delete.html?id=${user.id}">Delete</a>
+      `;
 
       tableBody.appendChild(row);
     }
