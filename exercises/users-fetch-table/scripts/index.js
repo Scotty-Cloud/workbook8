@@ -50,14 +50,17 @@ async function fetchAndDisplayUserData() {
       let emailCell = row.insertCell();
       emailCell.textContent = user.email;
 
-      let companyCell = row.insertCell();
-      companyCell.textContent = user.company.name;
-
-      let actionsCell = row.insertCell();
-      actionsCell.innerText = `
-        <a href="edit.html?id=${user.id}">Edit</a>
-        <a href="delete.html?id=${user.id}">Delete</a>
-      `;
+      let editAnchor = document.createElement("a");
+      editAnchor.href = `edit.html?id=${user.id}`;
+      editAnchor.innerText = "Edit"
+      let editCell = row.insertCell()
+      editCell.appendChild(editAnchor)
+      
+      let deleteAnchor = document.createElement("a");
+      deleteAnchor.href = `delete.html?id=${user.id}`
+      deleteAnchor.innerText = "Delete"
+      let deleteCell = row.insertCell()
+      deleteCell.appendChild(deleteAnchor)
 
       tableBody.appendChild(row);
     }
