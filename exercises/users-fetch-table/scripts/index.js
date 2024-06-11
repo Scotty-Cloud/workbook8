@@ -1,3 +1,4 @@
+// fetch() & .then solution
 // fetch('http://localhost:3000/users', {
 //     method: 'GET',
 //     headers: {
