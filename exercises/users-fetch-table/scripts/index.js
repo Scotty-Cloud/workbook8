@@ -38,18 +38,18 @@ async function fetchAndDisplayUserData() {
 
     let data = await response.json();
     let tableBody = document.querySelector("#user-data");
-    tableBody.innerHTML = ""; // Use innerHTML instead of innerText
+    tableBody.innerText = "";
     for (let user of data) {
       let row = tableBody.insertRow();
 
       let nameCell = row.insertCell();
-      nameCell.textContent = user.name;
+      nameCell.innerText = user.name;
 
       let usernameCell = row.insertCell();
-      usernameCell.textContent = user.username;
+      usernameCell.innerText = user.username;
 
       let emailCell = row.insertCell();
-      emailCell.textContent = user.email;
+      emailCell.innerText = user.email;
 
       let editAnchor = document.createElement("a");
       editAnchor.href = `edit.html?id=${user.id}`;
