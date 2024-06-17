@@ -3,23 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Storage</title>
+    <title>Document</title>
   </head>
   <body>
-    <button id="displayButton">Display Web Storage</button>
+    <main>
+      <h1>LocalStorage Demo</h1>
+      <button id="displayButton">Display Value</button>
+    </main>
 
     <script>
-      "use strict";
-      const displayButton = document.querySelector("#displayButton");
+      document.addEventListener("DOMContentLoaded", (event) => {
+        localStorage.setItem("myGame", "Devil May Cry 5");
+      });
 
-      localStorage.setItem("myItem", "stuff to store");
-
-      function display() {
-        const value = localStorage.getItem("myItem");
-        alert(value);
+      function displayValue() {
+        alert(localStorage.getItem("myGame"));
       }
 
-      displayButton.onclick = display;
+      document
+        .getElementById("displayButton")
+        .addEventListener("click", displayValue);
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        localStorage.setItem("anotherValue", "Another Value");
+      });
+
+      localStorage.clear();
     </script>
   </body>
 </html>
